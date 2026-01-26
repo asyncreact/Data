@@ -9,18 +9,18 @@ const IMAGE_CID = "offers";
 
 function buildVerifyLayoutEmail({
   imageUrl,
-  title = "Email Verification",
+  title = "Verificación de correo",
   buttonUrl,
-  buttonText = "Verify Email",
+  buttonText = "Verificar email",
 }) {
-  const colorPrimary = "#f97316";
-  const colorBackground = "#f3f4f6";
+  const colorPrimary = "#f97316"; 
+  const colorBackground = "#f3f4f6"; 
   const colorCard = "#ffffff";
   const colorTextMain = "#1f2937";
-  const colorTextLight = "#6b7280";
+  const colorTextLight = "#6b7280"; 
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -64,7 +64,7 @@ function buildVerifyLayoutEmail({
               <a href="${buttonUrl}" target="_blank" style="text-decoration:none; display:block;">
                 <img
                   src="cid:${IMAGE_CID}"
-                  alt="Exclusive Offer"
+                  alt="Special Deals"
                   width="600"
                   style="display:block; width:100%; max-width:600px; height:auto;"
                 />
@@ -122,7 +122,7 @@ const html = buildVerifyLayoutEmail({
 });
 
 const info = await sendApplicationEmail({
-  to: "einorhamburgo@gmail.com",
+  to: "",
   subject: "Your exclusive Prime Day rewards are here",
   text: "Claim your reward and unlock exclusive deals just for you.",
   html,
