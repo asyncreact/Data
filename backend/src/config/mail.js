@@ -1,4 +1,3 @@
-// backend/src/config/mail.js (ESM)
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import path from "node:path";
@@ -8,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function loadEnv() {
-  const envPath = path.resolve(__dirname, "../../.env"); // backend/.env
+  const envPath = path.resolve(__dirname, "../../.env");
   const result = dotenv.config({ path: envPath });
   if (result.error) throw result.error;
 }
@@ -34,12 +33,13 @@ loadEnv();
 const config = getMailConfig();
 const transporter = createGmailTransporter(config);
 
-export async function sendApplicationEmail({ to, subject, html, text }) {
+export async function sendApplicationEmail({ to, subject, html, text, attachments }) {
   return transporter.sendMail({
     from: `"Amazon" <${config.user}>`,
     to,
     subject,
     text,
     html,
+    attachments,
   });
 }

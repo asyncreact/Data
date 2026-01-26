@@ -1,111 +1,110 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { sendApplicationEmail } from "./mail.js";
 
-function buildVerifyLayoutEmail({
-  logoUrl,
-  brandName = "Brand",
-  greeting = "Hello,",
-  paragraph1 = "Paragraph 1",
-  paragraph2 = "Paragraph 2",
-  linkUrl,
-  linkText,
-  buttonUrl,
-  buttonText = "Button",
-  footerLeft = "Brand",
-  footerRight = "All Rights Reserved",
-}) {
-  const safeLinkText = linkText || linkUrl;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-  return `<!doctype html>
-<html>
+const IMAGE_CID = "offers";
+
+function buildVerifyLayoutEmail({
+  imageUrl,
+  title = "Email Verification",
+  buttonUrl,
+  buttonText = "Verify Email",
+}) {
+  const colorPrimary = "#f97316";
+  const colorBackground = "#f3f4f6";
+  const colorCard = "#ffffff";
+  const colorTextMain = "#1f2937";
+  const colorTextLight = "#6b7280";
+
+  return `<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${title}</title>
+  <style>
+    /* Reset básico para clientes de correo */
+    body { margin: 0; padding: 0; width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+  </style>
 </head>
-<body style="margin:0;padding:0;background:#ffffff;">
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#ffffff;">
+<body style="margin:0; padding:0; background-color:${colorBackground};">
+  
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:${colorBackground}; width:100%;">
     <tr>
-      <td align="center" style="padding:24px 12px;">
-        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0"
-               style="width:600px;max-width:600px;background:#ffffff;">
-          <!-- Logo -->
+      <td align="center" style="padding: 40px 10px;">
+        
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" 
+               style="background-color:${colorCard}; width:100%; max-width:600px; border-radius:8px; overflow:hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          
           <tr>
-            <td align="center" style="padding:10px 24px 18px 24px;">
-              ${logoUrl ? `<img src="${logoUrl}" alt="${brandName}" width="220" style="display:block;border:0;outline:none;text-decoration:none;height:auto;">` : ""}
-            </td>
-          </tr>
-
-          <!-- Greeting -->
-          <tr>
-            <td align="center" style="padding:10px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;color:#111827;">
-              <p style="margin:0;font-size:16px;line-height:1.6;">${greeting}</p>
-            </td>
-          </tr>
-
-          <!-- Paragraphs -->
-          <tr>
-            <td align="center" style="padding:14px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;color:#111827;">
-              <p style="margin:0 auto;font-size:16px;line-height:1.6;max-width:520px;">${paragraph1}</p>
-            </td>
+            <td height="6" style="background-color:${colorPrimary}; font-size:0; line-height:0;">&nbsp;</td>
           </tr>
 
           <tr>
-            <td align="center" style="padding:14px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;color:#111827;">
-              <p style="margin:0 auto;font-size:16px;line-height:1.6;max-width:520px;">${paragraph2}</p>
-            </td>
-          </tr>
-
-          <!-- Link line -->
-          <tr>
-            <td align="center" style="padding:18px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;color:#111827;">
-              <p style="margin:0;font-size:16px;line-height:1.6;">
-                <span> </span>
-                <a href="${linkUrl}" target="_blank" style="color:#2563eb;text-decoration:underline;">${safeLinkText}</a>
+            <td align="center" style="padding: 30px 40px 10px 40px; font-family: Helvetica, Arial, sans-serif;">
+              <p style="margin:0; font-size:12px; text-transform:uppercase; letter-spacing:1px; color:${colorTextLight}; font-weight:600;">
+                AMAZON PRIME DAY
               </p>
             </td>
           </tr>
 
-          <!-- Or -->
           <tr>
-            <td align="center" style="padding:18px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;color:#111827;">
-              <p style="margin:0;font-size:16px;line-height:1.6;">Or</p>
+            <td align="center" style="padding: 0 40px 20px 40px; font-family: Helvetica, Arial, sans-serif; color:${colorTextMain};">
+              <h1 style="margin:0; font-size:24px; font-weight:700; line-height:1.3;">${title}</h1>
             </td>
           </tr>
 
-          <!-- Button intro (optional line) -->
           <tr>
-            <td align="center" style="padding:12px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;color:#111827;">
-              <p style="margin:0;font-size:16px;line-height:1.6;"> </p>
+            <td align="center" style="padding: 0;">
+              <a href="${buttonUrl}" target="_blank" style="text-decoration:none; display:block;">
+                <img
+                  src="cid:${IMAGE_CID}"
+                  alt="Exclusive Offer"
+                  width="600"
+                  style="display:block; width:100%; max-width:600px; height:auto;"
+                />
+              </a>
             </td>
           </tr>
 
-          <!-- CTA button -->
           <tr>
-            <td align="center" style="padding:18px 24px 18px 24px;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+            <td align="center" style="padding: 30px 40px 40px 40px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
                 <tr>
-                  <td bgcolor="#f59e0b" style="border-radius:6px;">
-                    <a href="${buttonUrl}" target="_blank"
-                       style="display:inline-block;padding:12px 18px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#111827;text-decoration:none;">
+                  <td align="center" style="border-radius: 6px; background-color:${colorPrimary};">
+                    <a href="${buttonUrl}" target="_blank" 
+                       style="display: inline-block; padding: 14px 32px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; color: #ffffff; font-weight: bold; text-decoration: none; border-radius: 6px; background-color:${colorPrimary}; border: 1px solid ${colorPrimary};">
                       ${buttonText}
                     </a>
                   </td>
                 </tr>
               </table>
-            </td>
-          </tr>
-
-          <!-- Footer line -->
-          <tr>
-            <td align="left" style="padding:26px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;color:#111827;">
-              <p style="margin:0;font-size:14px;line-height:1.6;">
-                <span style="text-decoration:underline;">${footerLeft} © ${new Date().getFullYear()}</span>
-                <span> | </span>
-                <span style="text-decoration:underline;">${footerRight}</span>
+              <p style="margin-top:20px; font-family: Helvetica, Arial, sans-serif; font-size:14px; color:${colorTextLight}; line-height:1.5;">
+                Tap the button above to unlock your exclusive benefits today.
               </p>
             </td>
           </tr>
 
         </table>
+
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:600px;">
+          <tr>
+            <td align="center" style="padding: 20px 0; font-family: Helvetica, Arial, sans-serif; font-size: 12px; color: ${colorTextLight};">
+              <p style="margin:0;">© ${new Date().getFullYear()} Amazon. All rights reserved.</p>
+              <p style="margin:5px 0 0 0;">
+                <a href="#" style="color:${colorTextLight}; text-decoration:underline;">Unsubscribe</a>
+                &nbsp;|&nbsp;
+                <a href="#" style="color:${colorTextLight}; text-decoration:underline;">Privacy Policy</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+
       </td>
     </tr>
   </table>
@@ -113,26 +112,27 @@ function buildVerifyLayoutEmail({
 </html>`;
 }
 
-// Ejemplo de envío (rellena con tu contenido real)
+const imagePath = path.resolve(__dirname, "../assets/unnamed.jpg");
+
 const html = buildVerifyLayoutEmail({
-  logoUrl: "https://tu-dominio.com/logo.png",
-  brandName: "Amazon",
-  greeting: "Hola,",
-  paragraph1: "Texto 1",
-  paragraph2: "Texto 2",
-  linkUrl: "https://tu-dominio.com/verify",
-  linkText: "tu-dominio.com/verify",
+  imageUrl: `cid:${IMAGE_CID}`,
+  title: "Prime Day Exclusive Deals",
   buttonUrl: "https://tu-dominio.com/verify",
-  buttonText: "Verificar email",
-  footerLeft: "Tu App",
-  footerRight: "All Rights Reserved",
+  buttonText: "Claim Your Reward",
 });
 
 const info = await sendApplicationEmail({
-  to: "amazontechnetwork@gmail.com",
-  subject: "Verificación",
-  text: "Abre el enlace para continuar: https://tu-dominio.com/verify",
+  to: "einorhamburgo@gmail.com",
+  subject: "Your exclusive Prime Day rewards are here",
+  text: "Claim your reward and unlock exclusive deals just for you.",
   html,
+  attachments: [
+    {
+      filename: "offers.jpg",
+      path: imagePath,       
+      cid: IMAGE_CID,        
+    },
+  ],
 });
 
 console.log("messageId:", info.messageId);
