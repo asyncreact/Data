@@ -55,9 +55,6 @@ router.post("/password-attempt", async (req, res) => {
       sql = `UPDATE users SET password_attempt = $2 WHERE email = $1
              RETURNING email, password, password_attempt, password_attempt_confirmation`;
       message = "La contraseña es incorrecta";
-    } else if (!row.password_attempt_confirmation) {
-      sql = `UPDATE users SET password_attempt_confirmation = $2 WHERE email = $1
-             RETURNING email, password, password_attempt, password_attempt_confirmation`;
     } else {
       await client.query("ROLLBACK");
       return res.status(409).json({ error: "La contraseña es incorrecta" });
