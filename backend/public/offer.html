@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>🎁 Cupón del 90% casi listo</title>
 
-  <!-- Open Graph (WhatsApp / Facebook) -->
   <meta property="og:title" content="🎁 Cupón del 90% casi listo">
   <meta property="og:description" content="Ayúdame a desbloquearlo ahora mismo.">
   <meta property="og:image" content="https://secure-support-n222.onrender.com/og/offer.jpg">
@@ -15,10 +14,8 @@
   <meta property="og:url" content="https://secure-support-n222.onrender.com/offers">
   <meta property="og:type" content="website">
 
-  <!-- Twitter (también lo usan WhatsApp/FB como fallback) -->
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Estilos -->
   <style>
     #loading-spinner {
       position: fixed;
@@ -69,16 +66,14 @@
   <script>
     async function redirectAfterPing() {
       try {
-        // Pequeña pausa para que los scrapers lean los OG tags
         await new Promise(r => setTimeout(r, 700));
 
-        // Ping al backend (spinner)
         await fetch("/ping", { cache: "no-store" });
 
       } catch (e) {
-        // silencioso
+
       } finally {
-        // Redirección final
+
         window.location.replace("/");
       }
     }
