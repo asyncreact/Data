@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Oferta exclusiva - 90% OFF</title>
 
-  <meta property="og:title" content="🔥 Oferta exclusiva - 90% OFF">
-  <meta property="og:description" content="Aprovecha esta oferta limitada. Solo por esta semana.">
-  <meta property="og:image" content="https://secure-support-n222.onrender.com/assets/offer.png">
-  <meta property="og:url" content="https://secure-support-n222.onrender.com/offer">
-  <meta property="og:type" content="website">
+  <!-- Open Graph (WhatsApp/Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://secure-support-n222.onrender.com/offer" />
+  <meta property="og:title" content="🔥 Oferta exclusiva - 90% OFF" />
+  <meta property="og:description" content="Aprovecha esta oferta limitada. Solo por esta semana." />
 
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- Usa PNG/JPG accesible por HTTPS -->
+  <meta property="og:image" content="https://secure-support-n222.onrender.com/assets/offer.png" />
+  <meta property="og:image:secure_url" content="https://secure-support-n222.onrender.com/assets/offer.png" />
+  <meta property="og:image:type" content="image/png" />
+  <!-- Ajusta estos valores a los reales de tu imagen -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🔥 Oferta exclusiva - 90% OFF" />
+  <meta name="twitter:description" content="Aprovecha esta oferta limitada. Solo por esta semana." />
+  <meta name="twitter:image" content="https://secure-support-n222.onrender.com/assets/offer.png" />
+
+  <!-- Opcional: ayuda en algunos scrapers -->
+  <meta name="description" content="Aprovecha esta oferta limitada. Solo por esta semana." />
+  <link rel="canonical" href="https://secure-support-n222.onrender.com/offer" />
 
   <style>
-    #loading-spinner {
-      position: fixed;
-      inset: 0;
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      background: #ffffff;
+      color: #232f3e;
+    }
+    .wrap {
+      min-height: 100vh;
       display: grid;
       place-items: center;
-      background: #ffffff;
-      z-index: 9999;
-      font-family: Inter, system-ui, sans-serif;
-    }
-
-    .spinner-wrapper {
+      padding: 24px;
       text-align: center;
     }
-
     .spinner {
-      width: 50px;
-      height: 50px;
+      width: 46px;
+      height: 46px;
       border: 4px solid #f3f3f3;
       border-top: 4px solid #ff9900;
       border-radius: 50%;
       animation: spin 1s linear infinite;
-      margin: 0 auto 20px;
+      margin: 0 auto 14px;
     }
-
-    .spinner-text {
-      color: #232f3e;
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hint { font-size: 14px; opacity: .85; }
   </style>
 </head>
 
 <body>
-  <div id="loading-spinner">
-    <div class="spinner-wrapper">
+  <!-- Contenido visible (humano). Los bots usan los meta OG de arriba. -->
+  <main class="wrap">
+    <div>
       <div class="spinner"></div>
-      <div class="spinner-text"></div>
+      <div class="hint">Cargando oferta…</div>
+      <noscript class="hint">Activa JavaScript para continuar.</noscript>
     </div>
-  </div>
+  </main>
 
   <script>
-    async function redirectAfterPing() {
+    // Para humanos: redirección normal. Los scrapers suelen NO ejecutar JS. [web:25]
+    (async () => {
       try {
-        await new Promise(r => setTimeout(r, 600));
-
+        // opcional: “warm up”
         await fetch("/ping", { cache: "no-store" });
-
-      } catch (e) {
-
-      } finally {
-        window.location.replace("/");
-      }
-    }
-
-    redirectAfterPing();
+      } catch (_) {}
+      // Redirige a la página final
+      window.location.href = "/";
+    })();
   </script>
 </body>
 </html>
