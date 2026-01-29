@@ -30,7 +30,7 @@ app.get("/og/offer.jpg", (req, res) => {
   res.setHeader("Content-Type", "image/jpeg");
   res.setHeader("Cache-Control", "public, max-age=86400");
   res.setHeader("Accept-Ranges", "none");
-  res.sendFile(path.join(publicPath, "assets", "offer.jpg"));
+  res.sendFile(path.join(publicPath, "assets", "offers.jpg"));
 });
 
 app.get("/ping", (req, res) => {
