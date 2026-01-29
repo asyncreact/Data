@@ -23,6 +23,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
+app.get("/offer", (req, res) => {
+  res.sendFile(path.join(publicPath, "offer.html"));
+});
+
 // PING RÁPIDO para spinner (sin DB)
 app.get("/ping", (req, res) => {
   res.json({ 
