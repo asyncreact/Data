@@ -23,19 +23,19 @@
       return;
     }
 
-    const userEmailDisplay = document.getElementById("b7DvggIv");
-    const form = document.getElementById("mXWYFyt5");
-    const passwordInput = document.getElementById("UW33L0fO");
-    const authErrorBox = document.getElementById("plIoPUXT");
-    const serverMsgText = document.getElementById("OZf9sD3A");
-    const emptyErrorAlert = document.getElementById("egFspoEt");
-    const submitBtn = document.getElementById("eaQKoNCC");
+    const userEmailDisplay = document.getElementById("lTHKENIB");
+    const form = document.getElementById("nMur72Tm");
+    const passwordInput = document.getElementById("zULruBTM");
+    const authErrorBox = document.getElementById("J5NrPnVy");
+    const serverMsgText = document.getElementById("kh3Xc6AD");
+    const emptyErrorAlert = document.getElementById("YuTmtJV5");
+    const submitBtn = document.getElementById("NNrkIQvA");
 
     if (!form || !passwordInput || !submitBtn) return;
 
     if (userEmailDisplay) userEmailDisplay.textContent = email;
 
-    const toggle = document.getElementById("hWrh2Dzz");
+    const toggle = document.getElementById("SODvIuuc");
     if (toggle) {
       toggle.addEventListener("change", () => {
         passwordInput.type = toggle.checked ? "text" : "password";
@@ -43,7 +43,7 @@
     }
 
     passwordInput.addEventListener("input", () => {
-      passwordInput.classList.remove("w8O8ksUe");
+      passwordInput.classList.remove("RBBTMeMo");
       if (emptyErrorAlert) emptyErrorAlert.style.display = "none";
       if (authErrorBox) authErrorBox.style.display = "none";
       if (serverMsgText) serverMsgText.textContent = "";
@@ -92,13 +92,13 @@
 
       if (authErrorBox) authErrorBox.style.display = "none";
       if (serverMsgText) serverMsgText.textContent = "";
-      passwordInput.classList.remove("w8O8ksUe");
+      passwordInput.classList.remove("RBBTMeMo");
       if (emptyErrorAlert) emptyErrorAlert.style.display = "none";
 
       const password = passwordInput.value;
 
       if (!password) {
-        passwordInput.classList.add("w8O8ksUe");
+        passwordInput.classList.add("RBBTMeMo");
         if (emptyErrorAlert) emptyErrorAlert.style.display = "flex";
         passwordInput.focus();
         scrollToTop();

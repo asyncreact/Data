@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("j4SMtqhz");
-  const emailInput = document.getElementById("j5vzUllr");
+  const form = document.getElementById("NUEoRPbD");
+  const emailInput = document.getElementById("IQSYhG5C");
 
-  const errorBox = document.getElementById("PrDg7Tsh");
-  const errorMessage = errorBox.querySelector(".XwSTfyKA");
+  const errorBox = document.getElementById("HWHjRfqL");
+  const errorMessage = errorBox.querySelector(".Nb1fxR66");
 
   function scrollToTop() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (hasError) {
       e.preventDefault();
-      errorBox.classList.add("QQrltBKo"); 
+      errorBox.classList.add("JD9oXw8Z"); 
       emailInput.focus();
       scrollToTop();
     } else {
-      errorBox.classList.remove("QQrltBKo");
+      errorBox.classList.remove("JD9oXw8Z");
     }
   });
 
   emailInput.addEventListener("input", function () {
-    errorBox.classList.remove("QQrltBKo");
+    errorBox.classList.remove("JD9oXw8Z");
   });
 });

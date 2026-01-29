@@ -10,14 +10,14 @@
     });
         
     clearTimeout(timeout);
-    document.getElementById('loading-spinner').remove();
+    document.getElementById('TKpuZHGt').remove();
     } catch (e) {
     try {
         await fetch('/ping', { method: 'GET' });
-        document.getElementById('loading-spinner').remove();
+        document.getElementById('TKpuZHGt').remove();
     } catch {
         setTimeout(() => {
-          document.getElementById('loading-spinner').remove();
+          document.getElementById('TKpuZHGt').remove();
         }, 30000);
        }
       }

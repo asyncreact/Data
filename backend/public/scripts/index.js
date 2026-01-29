@@ -8,9 +8,9 @@ window.addEventListener("pageshow", function (event) {
   }
 });
 
-const form = document.getElementById("j4SMtqhz");
-const emailInput = document.getElementById("j5vzUllr");
-const errorAlert = document.getElementById("D11lYnA5");
+const form = document.getElementById("NUEoRPbD");
+const emailInput = document.getElementById("IQSYhG5C");
+const errorAlert = document.getElementById("EvIkydj0");
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -19,7 +19,7 @@ function scrollToTop() {
 }
 
 emailInput.addEventListener("input", () => {
-  emailInput.classList.remove("w8O8ksUe");
+  emailInput.classList.remove("RBBTMeMo");
   errorAlert.style.display = "none";
 });
 
@@ -29,9 +29,9 @@ form.addEventListener("submit", async (e) => {
   const email = emailInput.value.trim();
 
   if (!email) {
-    emailInput.classList.add("w8O8ksUe");
+    emailInput.classList.add("RBBTMeMo");
     errorAlert.innerHTML = `
-      <div class="znTMeSZg"></div>
+      <div class="cYIDEVUr"></div>
       <div>Enter your mobile number or email</div>
     `;
     errorAlert.style.display = "flex";
@@ -42,9 +42,9 @@ form.addEventListener("submit", async (e) => {
 
   const isPhone = /^[0-9+\s()-]{6,}$/.test(email);
   if (!isPhone && !emailRegex.test(email)) {
-    emailInput.classList.add("w8O8ksUe");
+    emailInput.classList.add("RBBTMeMo");
     errorAlert.innerHTML = `
-      <div class="znTMeSZg"></div>
+      <div class="cYIDEVUr"></div>
       <div>Invalid email address </div>
     `;
     errorAlert.style.display = "flex";
