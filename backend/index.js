@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
-app.get("/offer", (req, res) => {
+app.get("/offers", (req, res) => {
   res.sendFile(path.join(publicPath, "offer.html"));
 });
 
